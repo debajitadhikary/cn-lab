@@ -39,10 +39,10 @@ int  main()
 	{
 	// clrscr();
 	int a[4],i=0;
-	cout<<"\nEnter The IP address";
+	cout<<"\nEnter The IP address : ";
 	for(i=0;i<4;i++)
 		cin>>a[i];
-	cout<<"\n IP ADDRESS :"<<a[0]<<"."<<a[1]<<"."<<a[2]<<"."<<a[3]<<"\n";
+	cout<<"\n IP ADDRESS : "<<a[0]<<"."<<a[1]<<"."<<a[2]<<"."<<a[3]<<"\n";
 	cout<<"\n The IP address is in : ";
 	if(a[0]>=0 && a[0]<=127)
 	cout<<"Class A";
@@ -55,6 +55,8 @@ int  main()
 	if(a[0]>239)
 	cout<<"Class E";
 	// getch();
+
+	std::cout<<"\n\n" ;
 	}
 
 // */
