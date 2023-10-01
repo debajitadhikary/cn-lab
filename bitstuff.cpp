@@ -28,8 +28,8 @@ int main() {
     std::cout << "\n After bit-stuffing: ";
     for (const auto& bit : a) std::cout << bit;
 
-      // Bit Destuffing
-     count = 0;
+    // Bit Destuffing
+    count = 0;
     auto it = a.begin();
     while (it != a.end()) {
         if (*it == 1) {
@@ -46,7 +46,6 @@ int main() {
     
     std::cout << "\n After bit-destuffing: ";
     for (const auto& bit : a) std::cout << bit;
-// This code should correctly destuff sequences of five consecutive 1s from the a vector and handle the edge cases more gracefully.
 
 
     std::cout<<std::endl;
