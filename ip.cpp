@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 
+// 192 168 123 132
 int main() {
     std::string ip;
     std::cout << "Enter The IP address: ";
@@ -16,7 +17,7 @@ int main() {
     a[i] = std::stoi(ip.substr(start));
 
     std::cout << "\nIP ADDRESS: " << a[0] << "." << a[1] << "." << a[2] << "." << a[3] << "\n";
-    std::cout << "The IP address is in Class: ";
+    std::cout << "The IP address is in : ";
 
     char ipClass = (a[0] >= 0 && a[0] <= 127) ? 'A' :
                    (a[0] >= 128 && a[0] <= 191) ? 'B' :
