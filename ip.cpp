@@ -4,7 +4,7 @@
 // 192 168 123 132
 int main() {
     std::string ip;
-    std::cout << "Enter The IP address: ";
+    std::cout << "\nEnter The IP address: ";
     std::cin >> ip;
 
     int a[4] = {0}, i = 0, start = 0;
