@@ -56,7 +56,7 @@ int main()
 		cout << "Class E";
 	// getch();
 
-	std::cout << "\n\n";
+	std::cout << "\n\n";						
 }
 
 // */
