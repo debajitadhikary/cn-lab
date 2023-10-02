@@ -30,33 +30,33 @@
 // }
 // /*
 // To determine if the IP address is in Class A, B, C, D or E.
-#include<iostream>
-#include<conio.h>
-#include<stdio.h>
+#include <iostream>
+#include <conio.h>
+#include <stdio.h>
 
 using namespace std;
-int  main()
-	{
+int main()
+{
 	// clrscr();
-	int a[4],i=0;
-	cout<<"\nEnter The IP address : ";
-	for(i=0;i<4;i++)
-		cin>>a[i];
-	cout<<"\n IP ADDRESS : "<<a[0]<<"."<<a[1]<<"."<<a[2]<<"."<<a[3]<<"\n";
-	cout<<"\n The IP address is in : ";
-	if(a[0]>=0 && a[0]<=127)
-	cout<<"Class A";
-	if(a[0]>127 && a[0]<191)
-	cout<<"Class B";
-	if(a[0]>191 && a[0]<224)
-	cout<<"Class C";
-	if(a[0]>224 && a[0]<=239)
-	cout<<"Class D";
-	if(a[0]>239)
-	cout<<"Class E";
+	int a[4], i = 0;
+	cout << "\nEnter The IP address : ";
+	for (i = 0; i < 4; i++)
+		cin >> a[i];
+	cout << "\n IP ADDRESS : " << a[0] << "." << a[1] << "." << a[2] << "." << a[3] << "\n";
+	cout << "\n The IP address is in : ";
+	if (a[0] >= 0 && a[0] <= 127)
+		cout << "Class A";
+	if (a[0] > 127 && a[0] < 191)
+		cout << "Class B";
+	if (a[0] > 191 && a[0] < 224)
+		cout << "Class C";
+	if (a[0] > 224 && a[0] <= 239)
+		cout << "Class D";
+	if (a[0] > 239)
+		cout << "Class E";
 	// getch();
 
-	std::cout<<"\n\n" ;
-	}
+	std::cout << "\n\n";
+}
 
 // */
