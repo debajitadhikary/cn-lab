@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
-
 // 1 1 1 1 1 1 0 0 1 0
 int main() {
     std::vector<int> a(10);
