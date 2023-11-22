@@ -1,0 +1,272 @@
+-----------Bit Stuffing - De Duffing----------------------------
+
+#include <iostream>
+#include <cstring>
+#define MAXSIZE 100
+using namespace std;
+int main() {
+    char *p, *q;
+    char temp;
+    char in[MAXSIZE];
+    char stuff[MAXSIZE];
+    char destuff[MAXSIZE];
+
+    int count = 0;
+
+   cout << "enter the input character string (0's & 1's only):\n";
+    cin >> in;
+
+    p = in;
+    q = stuff;
+
+    while (*p != '\0') {
+        if (*p == '0') {
+            *q = *p;
+            q++;
+            p++;
+        } else {
+            while (*p == '1' && count != 5) {
+                count++;
+                *q = *p;
+                q++;
+                p++;
+            }
+
+            if (count == 5) {
+                *q = '0';
+                q++;
+            }
+            count = 0;
+        }
+    }
+    *q = '\0';
+    cout << "\nthe stuffed character string is\n" << stuff;
+
+    p = stuff;
+    q = destuff;
+    while (*p != '\0') {
+        if (*p == '0') {
+            *q = *p;
+            q++;
+            p++;
+        } else {
+            while (*p == '1' && count != 5) {
+                count++;
+                *q = *p;
+                q++;
+                p++;
+            }
+            if (count == 5) {
+                p++;
+            }
+            count = 0;
+        }
+    }
+    *q = '\0';
+    cout << "\nthe destuffed character string is\n" << destuff << endl;
+    return 0;
+}
+
+
+-------Determine IP address in class A,B,C,D,E-------------
+
+
+#include<iostream>
+using namespace std;
+int main()
+	{
+	int a[4],i=0;
+	cout<<"Enter The IP address";
+	for(i=0;i<4;i++)
+		cin>>a[i];
+	cout<<"\n IP ADDRESS:"<<a[0]<<"."<<a[1]<<"."<<a[2]<<"."<<a[3]<<"\n";
+	cout<<"The IP address is in Class: ";
+	if(a[0]>=0 && a[0]<=127)
+	cout<<"Class A";
+	if(a[0]>127 && a[0]<191)
+	cout<<"Class B";
+	if(a[0]>191 && a[0]<224)
+	cout<<"Class C";
+	if(a[0]>224 && a[0]<=239)
+	cout<<"Class D";
+	if(a[0]>239)
+	cout<<"Class E";
+	return 0;
+	}
+
+
+
+------To determine if IP address is in class A,B,C-----------------------
+
+
+#include<iostream>
+using namespace std;
+int main()
+	{
+	int a[4],i=0;
+	cout<<"Enter The IP adress";
+	for(i=0;i<4;i++)
+		cin>>a[i];
+
+	if(a[0]>=0 && a[0]<=127)
+	cout<<"Class A";
+	if(a[0]>127 && a[0]<191)
+	cout<<"Class B";
+	if(a[0]>191)
+	cout<<"Class C";
+
+	cout<<"\nIP ADRESS:"<<a[0]<<"."<<a[1]<<"."<<a[2]<<"."<<a[3];
+	return 0;
+	}
+
+
+
+
+
+---------To translate dotted decimal IP address into 32 bit address.----------------
+
+
+
+
+#include<iostream>
+using namespace std;
+int main()
+	{
+	int i,j,a[4],bin[8]={128,64,32,16,8,4,2,1};
+	cout<<"Enter the ip address";
+	for(i=0;i<4;i++)
+		cin>>a[i];
+	cout<<"The ip address is:-"<<a[0]<<"."<<a[1]<<"."<<a[2]<<"."<<a[3]<<endl;
+	for(i=0;i<4;i++)
+		{
+		for(j=0;j<8;j++)
+			{
+			if (a[i]&bin[j])
+			cout<<1;
+			else
+			cout<<0;
+			}
+		cout<<".";
+		}
+	return 0;
+	}
+
+
+
+-------To generate hamming code.----------------------
+
+
+
+#include <iostream> 
+using namespace std;
+int main ( ) 
+      { 
+            int a0, a1, a2, a3, b0, b1, b2, b3, r0, r1, r2, s0, s1, s2, q0, q1, q2, q3; 
+            cout<< "Enter the word\n"; 
+            cin>>a3>>a2>>a1>>a0; 
+            r0= (a0+a1+a2) %2; 
+            r1= (a1+a2+a3) %2; 
+            r2= (a0+a1+a3) %2; 
+            cout <<"The code at sender is: "<<a3<<a2<<a1<<a0<<r2<<r1<<r0; 
+            cout<<"\n Enter the code at receiver:\n"; 
+            cin>>b3>>b2>>b1>>b0>>q2>>q1>>q0; 
+cout<<"b3="<<b3<<",b2="<<b2<<",b1="<<b1<<",b0="<<b0<<",q2="<<q2<<",q1="<<q1<<",q0="<<q0; 
+s0= (b2+b1+b0+q0) %2; 
+s1= (b3+b2+b1+q1) %2; 
+s2= (b1+b0+b3+q2) %2; 
+            cout<<"\n"<<"s2="<<s2<<",s1="<<s1<<",s0="<<s0; 
+            if ( s2==0 && s1==0 && s0==0 ) 
+            cout << "\n No Error"; 
+            else if ( s2==0 && s1==0 && s0==1 ) 
+            cout << "\n Error at q0"; 
+            else if ( s2==0 && s1==1 && s0==0 ) 
+             cout << "\n Error at q1"; 
+             else if ( s2==0 && s1==1 && s0==1 ) 
+             cout << "\n Error at b2"; 
+             else if ( s2==1 && s1==0 && s0==0 ) 
+             cout << "\n Error at q2"; 
+             else if ( s2==1 && s1==0 && s0==1 ) 
+             cout << "\n Error at b0"; 
+             else if ( s2==1 && s1==1 && s0==0 ) 
+             cout << "\n Error at b3"; 
+             else if ( s2==1 && s1==1 && s0==1 ) 
+             cout << "\n Error at b1"; 
+             return 0;
+      }
+
+
+
+
+
+
+--------: To  implement the Dijkstra Algorithm to find shortest path/OSPF--------------
+
+
+
+
+
+#include <iostream>
+#include <limits.h>
+
+#define V 6 // Number of vertices in the graph
+
+int minDistance(int dist[], bool visited[]) {
+    int min = INT_MAX, min_index;
+
+    for (int v = 0; v < V; v++) {
+        if (!visited[v] && dist[v] <= min) {
+            min = dist[v];
+            min_index = v;
+        }
+    }
+
+    return min_index;
+}
+
+void printSolution(int dist[]) {
+    std::cout << "Vertex \t Distance from Source\n";
+    for (int i = 0; i < V; i++)
+        std::cout << i << " \t " << dist[i] << "\n";
+}
+
+void dijkstra(int graph[V][V], int src) {
+    int dist[V];
+    bool visited[V];
+
+    for (int i = 0; i < V; i++) {
+        dist[i] = INT_MAX;
+        visited[i] = false;
+    }
+
+    dist[src] = 0;
+
+    for (int count = 0; count < V - 1; count++) {
+        int u = minDistance(dist, visited);
+        visited[u] = true;
+
+        for (int v = 0; v < V; v++) {
+            if (!visited[v] && graph[u][v] && dist[u] != INT_MAX &&
+                dist[u] + graph[u][v] < dist[v]) {
+                dist[v] = dist[u] + graph[u][v];
+            }
+        }
+    }
+
+    printSolution(dist);
+}
+
+int main() {
+    int graph[V][V] = {
+        {0, 4, 0, 0, 0, 0},
+        {4, 0, 8, 0, 0, 0},
+        {0, 8, 0, 7, 9, 0},
+        {0, 0, 7, 0, 10, 2},
+        {0, 0, 9, 10, 0, 1},
+        {0, 0, 0, 2, 1, 0}
+    };
+
+    dijkstra(graph, 0); // Assuming the source vertex is 0
+
+    return 0;
+}
+
